@@ -1,0 +1,30 @@
+<div *ngIf="items" class="table-analysis">
+  <div class="table-analysis-row">
+    <div class="table-analysis-col table-analysis-head"></div>
+    <div class="table-analysis-col table-analysis-head"></div>
+    <div class="table-analysis-col table-analysis-head">расстояние<br />до станции, м</div>
+    <div class="table-analysis-col table-analysis-head">чел. в день<br />на станции, чел.</div>
+  </div>
+  <div *ngFor="let item of items" class="table-analysis-row">
+    <div class="table-analysis-col">
+      <div class="table-analysis-circle"></div>
+    </div>
+    <div class="table-analysis-col table-analysis-col_left" [innerHTML]="item.name"></div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.dist | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.--percent]="item.percentDist + '%'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.count | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.--percent]="item.percentCount + '%'"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

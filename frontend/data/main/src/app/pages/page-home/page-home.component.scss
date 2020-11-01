@@ -1,0 +1,76 @@
+.page-home {
+  position: relative;
+
+  &__intro {
+    padding: 6rem 0;
+    // background-color: var(--color-white);
+  }
+
+  &__menu {
+    padding: 8rem 0;
+  }
+
+  &__bg {
+    .container {
+      position: relative;
+    }
+  }
+}
+
+.intro {
+  position: relative;
+  z-index: 10;
+
+  &__label {
+    font-size: 2rem;
+  }
+  &__name {
+    font-size: 6.2rem;
+    line-height: 120%;
+    max-width: 16ch;
+  }
+
+  &__logo {
+    margin-top: 2rem;
+  }
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10rem;
+  z-index: 10;
+}
+
+.menu-item {
+  text-align: center;
+
+  &__caption {
+    font-size: 3.2rem;
+    font-weight: bold;
+  }
+
+  &__desc {
+    margin: 2rem 0;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 1rem 4rem;
+    border-radius: 4rem;
+    color: #fff;
+    background-color: #000;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.page-home-bg {
+  padding-left: 30rem;
+  position: absolute;
+  top: -8rem;
+  z-index: 1;
+}

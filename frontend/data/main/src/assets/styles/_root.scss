@@ -1,0 +1,10 @@
+:root {
+
+  @each $color, $value in $colors {
+    --color-#{$color}: #{$value};
+  }
+
+  @each $color, $value in $product-colors {
+    --product-#{$color}: #{$value};
+  }
+}

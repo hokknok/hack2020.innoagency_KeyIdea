@@ -1,0 +1,12 @@
+{
+  "/api//*": {
+    "target": "http://cb47b42b739d.ngrok.io/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/f//*": {
+    "target": "http://fidget.ru/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

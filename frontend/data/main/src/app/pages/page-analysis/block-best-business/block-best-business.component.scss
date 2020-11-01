@@ -1,0 +1,41 @@
+.table-analysis {
+
+}
+
+.table-analysis-row {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 12rem 12rem 12rem 12rem 20rem 1fr;
+  grid-gap: 2rem;
+  margin-top: 1rem;
+}
+
+.item-list {
+
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .4rem 0;
+  border-top: 1px dotted var(--color-grey_20);
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__bar {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: var(--bar-width);
+    height: 5px;
+    background-color: red;
+  }
+
+  &:first-child {
+    border-top: none;
+  }
+}

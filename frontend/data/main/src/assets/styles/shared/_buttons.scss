@@ -1,0 +1,11 @@
+.btn {
+  padding: 1rem 1.5rem;
+  border-radius: .25rem;
+  color: var(--color-white);
+  background-color: var(--color-app__text);
+
+  &:hover {
+    color: var(--color-white);
+    background-color: var(--color-app__text_hover);
+  }
+}

@@ -1,0 +1,35 @@
+@import "src/assets/styles/ngc";
+
+.layout-block {
+  display: block;
+  position: relative;
+  // margin: 0 0 $grid-gutter-width 0;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--color-white);
+  box-shadow: 0 1px 0 0 var(--color-grey_20), 0 0 0 1px var(--color-grey_20);
+
+  &__head, &__body {
+    padding: 1rem;
+  }
+
+  &__head {
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-grey_20);
+  }
+
+  &_gap {
+    margin-top: 3rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+a.layout-block {
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 0 2rem var(--color-grey_20);
+  }
+}

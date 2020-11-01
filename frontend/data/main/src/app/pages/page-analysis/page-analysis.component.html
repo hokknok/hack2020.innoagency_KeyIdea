@@ -1,0 +1,97 @@
+<div class="page-analysis">
+  <div class="container">
+    <div class="caption"><h3>Анализ места</h3></div>
+
+    <div *ngIf="form" class="form">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form__row">
+          <div class="form__col form__col_input">
+            <input class="form-control" formControlName="address" type="text" placeholder="Введите адрес" />
+          </div>
+          <div class="form__col">
+            <input class="form-btn" value="Анализировать" type="submit" [disabled]="form.invalid" />
+          </div>
+        </div>
+        <div class="example">
+          Например: <span (click)="onInsertAddress()" [innerHTML]="defaultAddress"></span>
+        </div>
+      </form>
+    </div>
+
+    <div *ngIf="data" class="data">
+      <div class="row">
+        <div *ngIf="data.address?.map" class="col col-md-12">
+          <div class="layout-block layout-block_gap">
+            <div class="layout-block__head">Карта</div>
+            <div class="layout-block__body">
+              <app-yandex-maps
+                [style.--map-height]="'60rem'"
+                [rivalList]="rivalList"
+                [mapCenter]="this.data.address.map"
+                [currentPin]="this.data.address"
+                [heatMapData]="heatMapData"
+                [mapZoom]="12"></app-yandex-maps>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="this.data.bestBusiness && this.data.bestBusiness.businesses.length" class="col clo-md-12">
+          <div class="layout-block layout-block_gap">
+            <div class="layout-block__head">Конкурентный анализ</div>
+            <div class="layout-block__body">
+              <app-block-best-business [items]="this.data.bestBusiness.businesses" (businessType)="getRivalList($event)"></app-block-best-business>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div *ngIf="this.data.transport && this.data.transport.length" class="col col-md-6">
+          <div class="layout-block layout-block_gap">
+            <div class="layout-block__head">Ближайшие метро</div>
+            <div class="layout-block__body">
+              <app-nearest-metro [items]="nearestMetro"></app-nearest-metro>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="pieData['sex']['series']" class="col col-md-6">
+          <div class="layout-block layout-block_gap">
+            <div class="layout-block__head">Пол</div>
+            <div class="layout-block__body">
+              <app-pie-chart
+                [labels]="pieData['sex']['labels']"
+                [series]="pieData['sex']['series']"
+                [colors]="['#EE119B', '#3563AA']"
+              ></app-pie-chart>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="pieData['age']['series']" class="col col-md-6">
+          <div class="layout-block layout-block_gap">
+            <div class="layout-block__head">Возраст</div>
+            <div class="layout-block__body">
+              <app-bar-chart
+                [labels]="pieData['age']['labels']"
+                [series]="pieData['age']['series']"
+              ></app-bar-chart>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="pieData['soc']['series']" class="col col-md-6">
+          <div class="layout-block layout-block_gap">
+            <div class="layout-block__head">Социальный группы</div>
+            <div class="layout-block__body">
+              <app-bar-chart
+                [labels]="pieData['soc']['labels']"
+                [series]="pieData['soc']['series']"
+              ></app-bar-chart>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

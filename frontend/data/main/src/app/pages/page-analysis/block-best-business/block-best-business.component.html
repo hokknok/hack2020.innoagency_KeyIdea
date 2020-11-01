@@ -1,0 +1,84 @@
+<!--<div *ngIf="items" class="item-list">
+  <div *ngFor="let item of items" class="item">
+    <div class="item__name">
+      <a href="" [innerHTML]="item.name" (click)="onGetRivalList($event, item.code)"></a>
+    </div>
+    <div class="item__value" [innerHTML]="item.value"></div>
+
+    <div class="item__bar" [style.&#45;&#45;bar-width]="item.percent + '%'"></div>
+  </div>
+</div>-->
+
+
+<div *ngIf="items" class="table-analysis">
+  <div class="table-analysis-row">
+    <div class="table-analysis-col table-analysis-head table-analysis-head_left">Категория<br />объектов</div>
+    <div class="table-analysis-col table-analysis-head">Число объектов<br />в радиусе R, шт</div>
+    <div class="table-analysis-col table-analysis-head">Всего объектов<br />в Моске, шт</div>
+    <div class="table-analysis-col table-analysis-head">Чило людей<br />на 1 объект в R</div>
+    <div class="table-analysis-col table-analysis-head">Среднне число людей<br />на 1 объект в Москве</div>
+    <div class="table-analysis-col table-analysis-head">На сколько % больше людей в R<br />на 1 объект, чем в среднем по Москве</div>
+  </div>
+  <div *ngFor="let item of items" class="table-analysis-row">
+    <div class="table-analysis-col table-analysis-col_left">
+      <a href="" [innerHTML]="item.name" (click)="onGetRivalList($event, item.code)"></a>
+    </div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.countObject.value | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.--percent]="item.countObject.percent + '%'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.allObject.value | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.--percent]="item.allObject.percent + '%'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.countPeople.value | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.--percent]="item.countPeople.percent + '%'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.averagePeople.value | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.--percent]="item.averagePeople.percent + '%'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.differencePeople.value"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.--color-product__purple]="item.differencePeople.color" [style.--percent]="item.differencePeople.percent + '%'"></div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="table-analysis-col" [innerHTML]="item.name"></div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.dist | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.&#45;&#45;percent]="item.percentDist + '%'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="table-analysis-col">
+      <div class="table-analysis-col-data">
+        <div class="table-analysis-col-data__name" [innerHTML]="item.count | numberFormat"></div>
+        <div class="table-analysis-col-data__scale table-analysis-scale">
+          <div class="table-analysis-scale__value" [style.&#45;&#45;percent]="item.percentCount + '%'"></div>
+        </div>
+      </div>
+    </div>-->
+  </div>
+</div>

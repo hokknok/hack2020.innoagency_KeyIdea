@@ -1,0 +1,98 @@
+$container-max-width: 1440px;
+$font-family-base: 'PT Sans', Arial, Helvetica, sans-serif;
+
+$font-size-base:  2.4rem;
+$h1-font-size:    10rem;
+$h2-font-size:    6rem;
+$h3-font-size:    4.8rem;
+
+$line-height-base: 1.36;
+
+// Grid
+$grid-gutter-width:           3.2rem;
+
+// Style p element.
+$paragraph-margin-bottom:   1em;
+
+// Spacing
+$spacer: 8.2rem !default;
+
+$body-bg: #F9F9F9;
+$body-color: #292929;
+
+
+$red:                   #DF4C4A !default;
+$blue:                  #54B3E9 !default;
+$green:                 #80BD00 !default;
+$grey:                  #646464 !default;
+$grey_20:               rgba($grey, .2) !default;
+$orange:                #F0BF00 !default;
+$black:                 #292929 !default;
+$white:                 #ffffff !default;
+$product__red:          $red    !default;
+$product__orange:       #EEA73A !default;
+$product__green:        #009C62 !default;
+$product__dark-green:   #00A19B !default;
+$product__light-green:  #93D500 !default;
+$product__blue:         #0091C5 !default;
+$product__dark-blue:    #3563AA !default;
+$product__light-blue:   #54B3E9 !default;
+$product__purple:       #A8228E !default;
+$product__pink:         #EE119B !default;
+$app__bg:               #EAEAEA !default;
+$app__text:             #292929 !default;
+$app__text_hover:       #000000 !default;
+$app__text_50:          rgba($app__text, .5) !default;
+$text-link:             #00ABC2 !default;
+$text-link_hover:       rgba($text-link, .6) !default;
+$text-link-border:      rgba($text-link, .2) !default;
+$placeholder:           rgba($app__text, .23) !default;
+
+$colors: () !default;
+$colors: map-merge(
+    (
+      'red':                  $red,
+      'blue':                 $blue,
+      'green':                $green,
+      'grey':                 $grey,
+      'grey_20':              $grey_20,
+      'orange':               $orange,
+      'black':                $black,
+      'white':                $white,
+      'product__red':         $product__red,
+      'product__orange':      $product__orange,
+      'product__green':       $product__green,
+      'product__dark-green':  $product__dark-green,
+      'product__light':       $product__light-green,
+      'product__blue':        $product__blue,
+      'product__dark-blue':   $product__dark-blue,
+      'product__light-blue':  $product__light-blue,
+      'product__purple':      $product__purple,
+      'product__pink':        $product__pink,
+      'app__bg':              $app__bg,
+      'app__text':            $app__text,
+      'app__text_hover':      $app__text_hover,
+      'app__text_50':         $app__text_50,
+      'text-link':            $text-link,
+      'text-link_hover':      $text-link_hover,
+      'text-link_border':     $text-link-border,
+      'placeholder':     $placeholder,
+    ),
+    $colors
+);
+
+$product-colors: () !default;
+$product-colors: map-merge(
+    (
+      'red':           '#DF4C4A',
+      'red-border':    '#E5E5E5',
+      'purple':        '#A8228E',
+      'purple-border': '#eed3e8',
+      'blue':          '#3563AA',
+      'blue-border':   '#D2DBE9',
+      'lightblue':     '#54B3E9',
+      'lightblue-border': '#ddf0fb',
+
+    ),
+    $product-colors
+);
