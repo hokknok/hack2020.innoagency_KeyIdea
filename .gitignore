@@ -4,3 +4,9 @@ Homestead.json
 Homestead.yaml
 .env
 .phpunit.result.cache
+
+## Node
+/node_modules
+
+
+.DS_Store
